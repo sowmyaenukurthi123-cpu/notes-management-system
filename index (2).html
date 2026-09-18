@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NoteNest — Cloud Notes</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <h1>NoteNest</h1>
+    </div>
+    <p class="tagline">your notes, kept safe in the cloud</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Add / Edit Note Form -->
+    <section class="form-card" id="formCard">
+      <h2 id="formTitle">Add a new note</h2>
+      <form id="noteForm">
+        <input type="hidden" id="noteId" />
+
+        <div class="field">
+          <label for="title">Title</label>
+          <input type="text" id="title" placeholder="e.g. Photosynthesis Notes" required />
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="e.g. Biology" required />
+        </div>
+
+        <div class="field">
+          <label for="content">Content</label>
+          <textarea id="content" rows="4" placeholder="Write your note here..." required></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="saveBtn" class="btn btn-primary">Save Note</button>
+          <button type="button" id="cancelEditBtn" class="btn btn-secondary hidden">Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Search -->
+    <section class="search-row">
+      <input type="text" id="searchInput" placeholder="Search notes by title or subject..." />
+    </section>
+
+    <!-- Status message -->
+    <p id="statusMsg" class="status-msg"></p>
+
+    <!-- Notes grid -->
+    <section class="notes-grid" id="notesGrid">
+      <!-- Note cards get inserted here by script.js -->
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Made for a college mini project · Powered by Supabase</p>
+  </footer>
+
+  <!-- Supabase JS library (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
